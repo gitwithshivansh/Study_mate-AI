@@ -1,130 +1,158 @@
+# 🚀 Study Mate – AI-Powered Smart Learning Platform
 
-# Study Buddy - AI-Powered Learning Platform
+**Study Mate** is an intelligent learning assistant that transforms raw study material into structured, interactive, and personalized learning experiences.
 
-Study Buddy is an AI-powered learning platform that transforms your study materials into interactive study guides. Upload your documents, and Study Buddy will automatically generate summaries, flashcards, and quizzes to help you learn more effectively.
+Upload your notes, PDFs, or even YouTube transcripts — and Study Mate will automatically generate summaries, flashcards, quizzes, and contextual Q&A to help you learn faster and retain more.
 
-## Features
+---
 
-- **AI-Powered Content Generation**: Automatically generate summaries, flashcards, and quizzes from your uploaded documents (PDF, DOCX, TXT) and YouTube Transcripts.
-- **Interactive Learning**: Reinforce your knowledge with interactive flashcards and quizzes.
-- **Q&A**: Ask questions about your documents and get instant answers from the AI.
-- **Spaced Repetition**: Study flashcards using a spaced repetition algorithm (SM2) to maximize retention.
-- **Real-time Updates**: Get real-time updates on the processing status of your documents.
-- **User Authentication**: Secure user authentication with JWT.
-- **Dashboard**: Track your learning progress and recently studied materials.
+## ✨ Why Study Mate?
 
-## Tech Stack
+Traditional studying is passive and inefficient.
+**Study Mate turns it into an active learning system** using AI + spaced repetition.
+
+---
+
+## 🔥 Core Features
+
+* 🧠 **AI Content Engine**
+  Convert documents (PDF, DOCX, TXT) and YouTube transcripts into:
+
+  * Smart summaries
+  * Flashcards
+  * Auto-generated quizzes
+
+* ❓ **Contextual Q&A System**
+  Ask anything about your study material and get instant AI-powered answers.
+
+* 🔁 **Spaced Repetition (SM2 Algorithm)**
+  Optimize long-term memory with scientifically proven revision techniques.
+
+* ⚡ **Real-Time Processing Updates**
+  Track document processing with live status updates.
+
+* 📊 **Learning Dashboard**
+  Monitor your progress, revision history, and performance.
+
+* 🔐 **Secure Authentication**
+  JWT-based authentication with Google & GitHub login support.
+
+---
+
+## 🛠️ Tech Stack
 
 ### Backend
 
-- **Framework**: Node.js, Express, TypeScript
-- **Database**: MongoDB with Mongoose
-- **AI**:
-  - **LLM**: Google Gemini
-  - **Framework**: LangChain.js
-  - **Vector Store**: Pinecone / ChromaDB for semantic search and Q&A
-- **Real-time Communication**: Socket.IO
-- **File Storage**: Cloudinary for document storage
-- **Authentication**: Passport.js (JWT, Google, GitHub)
-- **Job Queue**: Redis for background jobs
-- **Scheduled Jobs**: node-cron for maintenance tasks
-- **Other**: Zod for validation, Winston for logging
+* **Runtime & Framework**: Node.js, Express, TypeScript
+* **Database**: MongoDB (Mongoose)
+* **AI Stack**:
+
+  * LLM: Google Gemini
+  * Framework: LangChain.js
+  * Vector DB: Pinecone / ChromaDB
+* **Real-Time**: Socket.IO
+* **Storage**: Cloudinary
+* **Auth**: Passport.js (JWT, OAuth)
+* **Background Jobs**: Redis
+* **Scheduling**: node-cron
+* **Validation & Logging**: Zod, Winston
 
 ### Frontend
 
-- **Framework**: React, Vite, TypeScript
-- **Styling**: Tailwind CSS
-- **State Management**: Zustand
-- **Data Fetching**: React Query, Axios
-- **Routing**: React Router
-- **Real-time Communication**: Socket.IO Client
+* **Framework**: React + Vite + TypeScript
+* **Styling**: Tailwind CSS
+* **State Management**: Zustand
+* **Data Fetching**: React Query + Axios
+* **Routing**: React Router
+* **Realtime**: Socket.IO Client
 
-## Getting Started
+---
+
+## ⚙️ Getting Started
 
 ### Prerequisites
 
-- Node.js (v18 or higher)
-- npm (v9 or higher)
-- Docker and Docker Compose (for running dependencies)
-- Access to Google Gemini API, Pinecone/ChromaDB, and Cloudinary
+* Node.js (v18+)
+* npm (v9+)
+* Docker & Docker Compose
+* API keys: Google Gemini, Pinecone/ChromaDB, Cloudinary
+
+---
 
 ### Installation
 
-1. **Clone the repository:**
+```bash
+git clone https://github.com/your-username/study-mate.git
+cd study-mate
+```
 
-   ```bash
-   git clone https://github.com/your-username/study-buddy.git
-   cd study-buddy
-   ```
+```bash
+npm run install:all
+```
 
-2. **Install dependencies:**
+```bash
+cp backend/.env.example backend/.env
+```
 
-   This command will install dependencies for both the frontend and backend.
+Update `.env` with your credentials.
 
-   ```bash
-   npm run install:all
-   ```
+```bash
+npm run dev
+```
 
-3. **Set up environment variables:**
+* Backend → http://localhost:3001
+* Frontend → http://localhost:3000
 
-   Create a `.env` file in the `backend` directory by copying the `.env.example` file.
+---
 
-   ```bash
-   cp backend/.env.example backend/.env
-   ```
-
-   Update the `backend/.env` file with your credentials for:
-   - MongoDB
-   - Google Gemini API
-   - Pinecone/ChromaDB
-   - Cloudinary
-   - JWT secret
-
-4. **Run the development servers:**
-
-   This will start both the backend and frontend development servers concurrently.
-
-   ```bash
-   npm run dev
-   ```
-
-   - The backend will be running on `http://localhost:3001`
-   - The frontend will be running on `http://localhost:3000`
-
-## Project Structure
-
-The project is a monorepo with two main packages: `frontend` and `backend`.
+## 📁 Project Structure
 
 ```
-study-buddy/
-├── backend/         # Express.js backend
-│   ├── src/
-│   └── ...
-├── frontend/        # React frontend
-│   ├── src/
-│   └── ...
-├── package.json     # Root package.json
+study-mate/
+├── backend/         # Express + AI processing
+├── frontend/        # React UI
+├── package.json
 └── README.md
 ```
 
-## API Endpoints
+---
 
-The backend exposes a REST API for the frontend to consume. For a detailed list of endpoints, you can refer to the API documentation available at `http://localhost:3001/api-docs` when the backend server is running.
+## 🔌 API Overview
 
-Key endpoints include:
+Main endpoints:
 
-- `POST /api/auth/register`
-- `POST /api/auth/login`
-- `POST /api/contents/upload-document`
-- `GET /api/contents`
-- `GET /api/flashcards/:contentId`
-- `GET /api/quizzes/:contentId`
-- `POST /api/qa/ask`
+* `POST /api/auth/register`
+* `POST /api/auth/login`
+* `POST /api/contents/upload-document`
+* `GET /api/contents`
+* `GET /api/flashcards/:contentId`
+* `GET /api/quizzes/:contentId`
+* `POST /api/qa/ask`
 
-## Contributing
+---
 
-Contributions are welcome! Please feel free to open an issue or submit a pull request.
+## 🚀 Future Improvements
 
-## License
+* 🎯 Personalized learning paths
+* 🧩 Gamification (XP, streaks, leaderboards)
+* 📱 Mobile app version
+* 🗣️ Voice-based learning assistant
 
-This project is licensed under the MIT License.
+---
+
+## 🤝 Contribution
+
+Open to improvements, feature ideas, and collaborations.
+
+---
+
+## 📜 License
+
+MIT License
+
+---
+
+## 👨‍💻 Author
+
+**Shivansh Singh**
+Building AI-powered tools + visual storytelling 🚀
